@@ -1,4 +1,4 @@
-import { deleteBoard } from "@/actions/deleteBoard"
+import { deleteBoard } from "@/actions/delete-board"
 import { FormButton } from "./[organizationId]/form-delete"
 
 interface BoardProps{
@@ -10,7 +10,7 @@ interface BoardProps{
  export const Board = ({
 title,id
 }: BoardProps) => {
-    const deleteBoardwithId = deleteBoard.bind(null,id)
+    const deleteBoardwithId = deleteBoard.bind(null,{id})
     
     return (
         <form action={deleteBoardwithId} className=" flex items-center gap-x-2">
@@ -19,7 +19,6 @@ title,id
             Board Title:{title }
             </p>
             <FormButton />
-          \
         </form>
     )
 }
